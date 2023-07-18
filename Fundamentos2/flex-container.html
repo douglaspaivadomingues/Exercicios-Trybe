@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox - Align Content</title>
+    <style>
+      .box {
+        color: #9069EF;
+        background-color: rgb(243, 243, 243);
+        border: 2px solid #232525;
+        font-size: 50px;
+        min-height: 60px;
+        margin: 10px 5px;
+        text-align: center;
+        width: 30%;
+      }
+
+      .box-container {
+        
+        align-items: start;
+        /* ADICIONE AQUI SEUS TESTES */
+        background-color: #0fa36b;
+        display: flex;
+        flex-wrap:wrap;
+        height: 600px;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div class="box-container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+    </div>
+  </body>
+</html><!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLEXBOX - FLEX-GROW</title>
+    <style>
+      .container {
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 100%;
+      }
+
+      .box {
+        align-items: center;
+        display: flex;
+        justify-content: center;align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-basis: 500px;
+        flex-grow: 0;
+        flex-shrink: 1;
+      }
+
+      .one {
+        background-color: #FBD26A;
+        display: flex;
+        /* Altere a propriedade grow. */
+        flex-grow: 2;
+        list-style: none;
+      }
+
+      .two {
+        background-color: #FAA488;
+        display: flex;
+        /* Altere a propriedade grow. */
+        flex-grow: 1;
+        list-style: none;
+      }
+
+      .three {
+        background-color: #9069EF;
+        display: flex;
+        /* Altere a propriedade grow. */
+        flex-grow: 1;
+        flex-shrink: 3;
+        list-style: none;
+      }
+
+      .four {
+        background-color: #006472;
+        display: flex;
+        /* Altere a propriedade grow. */
+
+        flex-grow: 6;
+        list-style: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li class="box one">1</li>
+      <li class="box two">2</li>
+      <li class="box three">3</li>
+      <li class="box four">4</li>
+    </ul>
+  </body>
+</html><!-- ... -->
+    <style>
+      .container {
+        display: flex;
+        height: 50px;
+        margin: auto;
+        width: 100%;
+      }
+
+      .box {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        /* Altere a propriedade flex-basis */
+        flex-basis: 500px;
+        flex-grow: 0;
+        flex-shrink: 1;
+      }
+
+      .one {
+        background-color: #FBD26A;
+        list-style: none;
+      }
+
+      .two {
+        background-color: #FAA488;
+        list-style: none;
+      }
+
+      .three {
+        background-color: #9069EF;
+        list-style: none;
+      }
+
+      .four {
+        background-color: #006472;
+        list-style: none;
+      }
+    <!-- </style> -->
+  <!-- ... -->

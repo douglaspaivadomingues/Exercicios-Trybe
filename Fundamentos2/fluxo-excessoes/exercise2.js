@@ -100,13 +100,12 @@ const clients = [
     try {
     for ( let i = 0; i < clients.length; i+=1) {
         const person = clients[i];
-
         if (name === person.name) {
-            return `Destinatário: ${person.name} + ${person.address}`;
+          return `Destinatário: ${person.name} + ${person.address}`;
         }
       }
       throw new Error('Destinatário não encontrado'); 
-    } catch (erro) {
+    }catch (error) {
       return `Erro: ${error.menssage}`;
     }
   };
@@ -114,7 +113,16 @@ const clients = [
   console.log(findPersonByName());
   
   const findPersonByPosition = (position) => {
-    // seu código aqui
+    try {
+      if ( position >= 0 && position < clients.length) {
+        const positionClient = clients[position];
+          return `Destinatário: ${positionClient.name}`;
+        } else {
+           throw new Error('Destinário não encontrado');
+        }
+    }catch (error){
+      return `Erro: ${error.menssage}`;
+    }
   };
   
   const findPeopleByState = (state) => {

@@ -18,4 +18,4 @@ function myFizzBuzz(num) {
   return num;
 };
 
-module.exports = {removeItem, myFizzBuzz};
+module.exports = { removeItem, myFizzBuzz };

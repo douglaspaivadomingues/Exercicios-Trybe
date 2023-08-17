@@ -1,5 +1,4 @@
-const removeItem = require('./script');
-const myFizzBuzz = require('./script');
+const { removeItem, myFizzBuzz } = require('./script');
 
 //Verifique se a chamada removeItem([1, 2, 3, 4], 3) retorna o array esperado.
 describe('Verifica se a função removeItem() está funcionando como esperado', () => {

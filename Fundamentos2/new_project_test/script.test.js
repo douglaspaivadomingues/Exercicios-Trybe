@@ -16,14 +16,30 @@ describe('Verifica se a função removeItem() está funcionando como esperado', 
 
 });
 
-//Caso num seja um número divisível apenas por 3, a função retorna "fizz".
-//Caso num seja um número divisível apenas por 5, a função retorna "buzz".
-//Caso num seja um número que não é divisível nem por 3 nem por 5, a função retorna o próprio número num.
-//Caso num não seja um número, a função retorna false.
+
+
+
+
 
 //Caso num seja um número divisível por 3 e 5, a função retorna "fizzbuzz".
-describe('verifica se a função myFizzBuzz() está funcionando corretamente', () => {
+describe('verifica se a função myFizzBuzz() funciona corretamente', () => {
   it('Caso num seja um número divisível por 3 e 5, a função retorna "fizzbuzz"', () => {
     expect(myFizzBuzz(15)).toBe('fizzbuzz');
+  });
+  it('Caso num seja um número divisível apenas por 3, a função retorna "buzz"', () => {
+    expect(myFizzBuzz(3)).toBe('fizz');
+  });
+  it('Caso num seja um número divisível apenas por 5, a função retorna "buzz".', () => {
+    expect(myFizzBuzz(5)).toBe('buzz');
+  });
+  it('Caso num seja um número que não é divisível nem por 3 nem por 5, \
+  a função retorna o próprio número num.', () => {
+    expect(myFizzBuzz(1)).toBe(1);
+  })
+  it('Caso num não seja um número, a função retorna false.', () => {
+    expect(myFizzBuzz('null')).toBe (false);
   })
 });
+
+
+

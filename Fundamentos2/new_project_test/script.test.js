@@ -1,4 +1,4 @@
-const { removeItem, myFizzBuzz } = require('./script');
+import { removeItem, myFizzBuzz, encode, decode, techList } from './script';
 
 //Verifique se a chamada removeItem([1, 2, 3, 4], 3) retorna o array esperado.
 describe('Verifica se a função removeItem() está funcionando como esperado', () => {
@@ -15,11 +15,6 @@ describe('Verifica se a função removeItem() está funcionando como esperado', 
   })
 
 });
-
-
-
-
-
 
 //Caso num seja um número divisível por 3 e 5, a função retorna "fizzbuzz".
 describe('verifica se a função myFizzBuzz() funciona corretamente', () => {
@@ -41,5 +36,60 @@ describe('verifica se a função myFizzBuzz() funciona corretamente', () => {
   })
 });
 
+describe('Exercício 3 - testando as funções encode e decode', () => {
+  it('Teste se encode é uma função.', () => {
+    expect(encode).toBeInstanceOf(Function);
+  })
+  it('teste se decode é uma função.', () => {
+    expect(decode).toBeInstanceOf(Function);
+  });
+  it('Para a função encode, teste se as vogais a, e, i, o, u \
+  são convertidas em 1, 2, 3, 4, 5, respectivamente.', () => {
+    expect(encode('a, e, i, o, u')).toBe('1, 2, 3, 4, 5');
+  });
+  it('Para a função decode, teste se os números 1, 2, 3, 4, 5 \
+  são convertidas em a, e, i, o, u respectivamente.', () => {
+    expect(decode('1, 2, 3, 4, 5')).toBe('a, e, i, o, u');
+  });
 
+  it('teste se as demais letras e os demais números não são convertidos para cada caso.', () => {
+    expect(decode('1, 2, 3')).toBe('a, e, i');
+  })
+});
+
+describe('Testa a função techList', () => {
+  it('Testa se a função techList é definida', () => {
+    expect(techList).toBeDefined();
+  });
+  it('Testa se techList é uma função', () => {
+    expect(typeof techList).toBe('function');
+  });
+  it('Lista com 5 tecnologias deve retornar uma lista de objetos ordenados', () => {
+    expect(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas')).toEqual([
+      {
+        tech: 'CSS',
+        name: 'Lucas'
+      },
+      {
+        tech: 'HTML',
+        name: 'Lucas'
+      },
+      {
+        tech: 'JavaScript',
+        name: 'Lucas'
+      },
+      {
+        tech: 'Jest',
+        name: 'Lucas'
+      },
+      {
+        tech: 'React',
+        name: 'Lucas'
+      }
+    ]);
+  });
+  it('Lista com 0 tecnologia deve retornar uma mensagem de erro "Vazio!"', () => {
+    expect(techList([], 'Lucas')).toBe('Vazio!');
+  });
+});
 

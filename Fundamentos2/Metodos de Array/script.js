@@ -117,4 +117,50 @@ const authorBook = eBooks.books.map((infoAuthor) => {
   }
 });
 
-console.log(authorBook);
+//console.log(authorBook);
+
+const person = {
+  name: 'João',
+  lastName: 'Cavernoso',
+  age: 22,
+  nationality: 'Angolan',
+};
+
+const { nationality = 'Zimbabwean' } = person;
+//console.log(nationality);
+
+const heroes = ['Shrek', 'Princess Fiona'];
+const [hero1, hero2, hero3 = 'Puss in Boots'] = heroes;
+
+//console.log(hero1); // Shrek
+//console.log(hero2); // Princess Fiona
+//console.log(hero3); // Puss in Boots
+
+//estrutura de um filter().
+//array.filter(() => {});
+//array.filter((item) => {});
+
+const data = ['Andre', 998812789, 'Gabriel', 995794897, 'Carol', 955589216];
+
+const result = data.filter((item) => typeof item === 'string');
+const numberPhone = data.filter((item) => typeof item === 'number');
+
+//console.log(result); // ['Andre', 'Gabriel', 'Carol']
+//console.log(numberPhone);
+
+// Array de produtos no mercado
+const products = [
+  { name: 'Maçã', category: 'Frutas', price: 2.5 },
+  { name: 'Leite', category: 'Laticínios', price: 3.0 },
+  { name: 'Pão', category: 'Padaria', price: 1.5 },
+  { name: 'Cenoura', category: 'Legumes', price: 1.0 },
+  { name: 'Queijo', category: 'Laticínios', price: 5.0 },
+  { name: 'Banana', category: 'Frutas', price: 2.0 },
+];
+
+// Filtrar apenas os produtos da categoria "Frutas"
+const fruits = products.filter((product) => product.category === 'Frutas');
+const vegetables = products.filter((product) => product.category === 'Legumes');
+
+console.log(fruits);
+console.log(vegetables);

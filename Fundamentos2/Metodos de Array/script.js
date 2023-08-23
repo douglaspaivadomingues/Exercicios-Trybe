@@ -162,5 +162,126 @@ const products = [
 const fruits = products.filter((product) => product.category === 'Frutas');
 const vegetables = products.filter((product) => product.category === 'Legumes');
 
-console.log(fruits);
-console.log(vegetables);
+//console.log(fruits);
+//console.log(vegetables);
+
+//Exercício 1
+//O array de objetos people, contêm elementos que representam pessoas com as propriedades name e age.
+// Utilize o método filter para filtrar as pessoas que têm a idade igual ou superior a 30.
+
+const people1 = [
+  { name: 'João', age: 25 },
+  { name: 'Maria', age: 30 },
+  { name: 'Pedro', age: 20 },
+  { name: 'Ana', age: 35 },
+];
+
+//const namesAndAge = people.filter((person) => person.age >= 30 );
+
+//console.log(namesAndAge);
+
+//Utilizando o método filter e array destructuring, crie uma função filterHighPlayers
+//que retorna um novo array contendo apenas os jogadores com altura igual ou superior a 200 centímetros.
+
+const players = [
+  { name: 'Michael Jordan', height: 198, team: 'Chicago Bulls' },
+  { name: 'LeBron James', height: 203, team: 'Los Angeles Lakers' },
+  { name: 'Kobe Bryant', height: 198, team: 'Los Angeles Lakers' },
+  { name: 'Stephen Curry', height: 191, team: 'Golden State Warriors' },
+  { name: 'Kevin Durant', height: 211, team: 'Brooklyn Nets' },
+];
+
+const players200 = (minHeight) => players.filter(({ height }) => height >= minHeight);
+const players200c = players200(200);
+
+//console.log(players200c);
+
+//const filterHighPlayers = (minHeight) => players.filter(({ height }) => height >= minHeight);
+
+//const players200c = filterHighPlayers(200);
+//console.log(players200c);
+
+//array.sort(`função de comparação` (opcional));
+
+//Utilize o sort para ordenar o array pela idade das pessoas em ordem crescente.
+
+const people = [
+  { name: 'Mateus', age: 18 },
+  { name: 'José', age: 16 },
+  { name: 'Ana', age: 23 },
+  { name: 'Cláudia', age: 20 },
+  { name: 'Bruna', age: 19 },
+];
+
+// Adicione seu código aqui
+people.sort((a, b) => a.age - b.age);
+
+//console.log(people);
+
+const pokemons = [
+  { name: 'Pikachu', type: 'Elétrico', level: 25 },
+  { name: 'Charizard', type: 'Fogo', level: 50 },
+  { name: 'Bulbasaur', type: 'Planta', level: 10 },
+  { name: 'Gyarados', type: 'Água', level: 40 },
+  { name: 'Alakazam', type: 'Psíquico', level: 35 },
+  { name: 'Snorlax', type: 'Normal', level: 50 },
+  { name: 'Mewtwo', type: 'Psíquico', level: 70 },
+  { name: 'Dragonite', type: 'Dragão', level: 55 },
+  { name: 'Mew', type: 'Psíquico', level: 30 },
+  { name: 'Articuno', type: 'Gelo', level: 60 },
+  { name: 'Zapdos', type: 'Elétrico', level: 60 },
+  { name: 'Moltres', type: 'Fogo', level: 60 },
+  { name: 'Gengar', type: 'Fantasma', level: 45 },
+  { name: 'Machamp', type: 'Lutador', level: 50 },
+  { name: 'Lapras', type: 'Água', level: 35 },
+  { name: 'Venusaur', type: 'Planta', level: 45 },
+  { name: 'Blastoise', type: 'Água', level: 55 },
+  { name: 'Golem', type: 'Pedra', level: 40 },
+  { name: 'Arcanine', type: 'Fogo', level: 55 },
+  { name: 'Jolteon', type: 'Elétrico', level: 40 },
+];
+
+//Exercício 1
+//Utilizando o método filter e object destructuring, crie uma função filterStrongPokemons
+//que retorna um novo array contendo apenas os Pokémons com nível superior a 30.
+
+const filterStrongPokemons = (minLevel) => pokemons.filter(( { level } ) => level > minLevel);
+const sortFilterStrongPokemons = filterStrongPokemons(30);
+sortFilterStrongPokemons.sort((a, b) => a.level - b.level);
+
+//console.log(sortFilterStrongPokemons);
+
+//Exercício 2
+//Utilizando os métodos filter e map encadeados, crie uma função getStrongPokemonNames
+//que retorna um novo array contendo apenas os nomes dos Pokémons com nível superior a 50.
+//Exercício 3
+//Utilize o método sort para ordenar o array de Pokémons em ordem crescente com base no nível
+//de cada Pokémon.
+
+const getStrongPokemonNames = (minLevel) => {
+  const strongPokemons = pokemons.filter((pokemon) => pokemon.level > minLevel);
+  const strongPokemonsName = strongPokemons.map((pokemon) => pokemon.name);
+  const sortStrongPokemonsName = strongPokemonsName.sort((a, b) => a.level - b.level);
+  return sortStrongPokemonsName;
+  };
+
+  //console.log(getStrongPokemonNames(50));
+
+//Exercício 4
+//Utilizando o método sort e default destructuring, crie uma função chamada sortPokemons
+//que retorna o array de Pokémons ordenado por nível em ordem decrescente. 
+//Caso dois Pokémons tenham o mesmo nível, a ordenação deve ser feita pelo nome 
+//em ordem alfabética crescente.
+
+ const sortPokemons = (pokemonArray) => {
+  return pokemonArray.sort((a, b) => {
+    if (a.level !== b.level) {
+      return b.level - a.level;
+    } else {
+      return a.name.localeCompare(b.name);
+    }
+  });
+};
+  
+const sortedPokemons = sortPokemons(pokemons);
+console.log(sortedPokemons);

@@ -1,5 +1,4 @@
-FROM httpd:2.4.54
-COPY index.html /usr/local/apache2/htdocs/
-EXPOSE 80
-CMD ["httpd-foreground"]
+FROM betrybe/figtrybe-artify:latest
+ENTRYPOINT [ "node", "app.js" ]
+CMD [ "#VQV Trybe" ]
 
